@@ -3,41 +3,22 @@
 {% block title %}Кафе Pizzburg{% endblock %}
 
 {% block content %}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Pizzburg</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse justify-content-end navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Главная</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Меню</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card">
+                  <img style="width: 80%;" src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/04918bd6-603f-46cf-a7e1-aaba0c004a32.jpg" class="card-img-top mt-3 align-self-center" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Кисло-сладкий цыпленок</h5>
+                    <p class="card-text ">Цыпленок, томатный соус, моцарелла, кисло-сладкий соус</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="text-muted">от 265 сом</h4>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Выбрать</a>
+                    </div>
+                  </div>
+                </div>
             </div>
         </div>
-    </nav>
+    </div>
 {% endblock %}

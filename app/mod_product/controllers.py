@@ -2,17 +2,17 @@ from flask import Blueprint, request
 from app import db
 from app.mod_category.models import Category
 
-mod_category = Blueprint('category', __name__, url_prefix='/category')
+mod_product = Blueprint('product', __name__, url_prefix='/product')
 
 
-@mod_category.route('/')
+@mod_product.route('/')
 def index():
   return {
     "users": [i.as_dict() for i in Category.query.all()],
   }
 
 
-@mod_category.route('/user', methods=['POST'])
+@mod_product.route('/user', methods=['POST'])
 def create_user():
   data = request.get_json()
   user = Category(
@@ -23,7 +23,7 @@ def create_user():
   return user.as_dict()
 
 
-@mod_category.route('/user/<int:id>', methods=['GET', 'POST', 'PUT', 'DELETE'])
+@mod_product.route('/user/<int:id>', methods=['GET', 'POST', 'PUT', 'DELETE'])
 def dispatcher(id=None):
   user = Category.query.get_or_404(id)
 
