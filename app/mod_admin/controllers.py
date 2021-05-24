@@ -3,13 +3,13 @@ from app.mod_admin.models import Admin
 from app.mod_category.models import Category
 from app.mod_product.models import Product
 from app import bcrypt
-from flask_login import login_user, current_user
+from flask_login import login_user, current_user, login_required
 
 mod_admin = Blueprint('admin', __name__, url_prefix='/admin')
 
 
 @mod_admin.route('/')
-def index():
+def index_get():
     if current_user.is_authenticated:
         categories = Category.query.count()
         products = Product.query.count()
@@ -24,6 +24,30 @@ def index():
         return render_template(
             'admin/login.html'
         )
+
+
+@mod_admin.route('/products')
+@login_required
+def products_get():
+    count = Product.query.count()
+    items = Product.query.all()
+    return render_template(
+        'admin/products.html',
+        count=count,
+        items=items,
+    )
+
+
+@mod_admin.route('/categories')
+@login_required
+def categories_get():
+    count = Category.query.count()
+    items = Category.query.all()
+    return render_template(
+        'admin/categories.html',
+        count=count,
+        items=items,
+    )
 
 
 @mod_admin.route('/password', methods=['GET'])
