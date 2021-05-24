@@ -9,7 +9,7 @@ class Product(Base):
     price = db.Column(db.Integer, nullable=False)
     description = db.Column(db.Text, nullable=True)
     ingredients = db.Column(db.Text, nullable=True)
-    image: db.Column(db.String, nullable=False)
+    image = db.Column(db.String, nullable=False)
 
 
     def __init__(self, title):
